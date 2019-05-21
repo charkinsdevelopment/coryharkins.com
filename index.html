@@ -367,25 +367,7 @@
   </section>-->
 
   <!-- CONTACT -->
-<section id="contact">
-    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
-      <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
-    </svg>
-    <div class="container flex">
-      <div class="header waypoint" data-animation="slide-in-left">CONTACT</div>
-      <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".25s"></div>
-      <div class="highlight waypoint" data-animation="slide-in-right" data-delay=".5s">Have a question or want to work together?</div>
-      <form class="waypoint" data-animation="pop-in" data-delay=".5s" id="contact-form" name="contact" method="POST" data-netlify="true">
-        <input placeholder="Name" type="text" name="name" required>
-        <input placeholder="Enter email" type="email" name="email" required>
-        <textarea placeholder="Your Message" type="text" name="message"></textarea>
-        <div id="success">
-          <div>Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span></div>
-        </div>
-        <input class="button" type="submit" id="submit" value=SUBMIT>
-      </form>
-    </div>
-  </section>
+<div w3-include-html="templates/contact.html"></div>
 
   <footer>
     <i class="mdi mdi-chevron-double-up page-link" dest="home"></i>
@@ -456,3 +438,35 @@
 </html>
 
 <script src="scripts/canvas.js"></script>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      } 
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script>
+<script>
+includeHTML();
+</script>
