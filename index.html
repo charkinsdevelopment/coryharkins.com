@@ -5,279 +5,292 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>CoryHarkins.Com</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
 </head>
 
-<body id="page-top">
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://www.coryharkins.com">
+      <span class="subtitle">CoryHarkins.com</span>
+    </a>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">CoryHarkins.Com</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Not Your Average Full Stack Developer</h1>
-          <hr class="divider my-4">
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Turning your <i>Ideas</i> into <i>Reality</i></p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">I've got what you need!</h2>
-          <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">From Hosting, to New Development, Databases, to APIs and WebHooks.</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+      <a class="navbar-item" href="#Portfolio">
+        Portfolio
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#About">
+            About
+          </a>
+          <a class="navbar-item" href="#Jobs">
+            Jobs
+          </a>
+          <a class="navbar-item" href="#Contact">
+            Contact
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
+<section class="hero is-primary is-large">
+  <div class="hero-body">
     <div class="container">
-      <h2 class="text-center mt-0">At Your Service</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Quality Coder at a Great Price</h3>
-            <p class="text-muted mb-0">My rate is $65/hr. Or we can talk project prices.</p>
+      <h1 class="title is-1">
+        Not Your Average Full Stack Guy
+      </h1>
+      <h2 class="subtitle">
+        Full Stack Developer currently living south of Atlanta. Always down for remote work.
+      </h2>
+      <a class="button is-primary is-inverted is-outlined">I need a website</a>
+      <a class="button is-danger is-inverted is-outlined">I am looking to hire</a>
+    </div>
+  </div>
+</section>
+
+<section id="#Portfolio" class="section">
+  <div class="container">
+    <h1 class="title is-1">Projects</h1>
+
+    <nav class="panel">
+      <p>
+        <a class="is-active button">all</a>
+        <a class="button">front end</a>
+        <a class="button">back end</a>
+        <a class="button">full stack</a>
+      </p>
+    </nav>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Listify.io</p>
+          <p class="subtitle">Data converter</p>
+          <div class="content">
+            <p>A conversion tool that transforms excel data into wrapped and comma separated data to port into sql. </p>
+            </br>
+            <a href="https://codepen.io/charkins/pen/aPpaeK" target="_blank" class="button is-primary">Check me out</a>
+          </div>
+          <div class="tags">
+            <span class="tag">Front End</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Jquery</span>
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Vue Book App</p>
+          <p class="subtitle">Reactive book list.</p>
+          <div class="content">
+            <p></p>
+          </div>
+          <div class="tags">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Vue.js</span>
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Calorie Calculator</p>
+          <p class="subtitle">Making Fitness Easy</p>
+          <div class="content">
+            <p>A calorie calculator to help you achieve your fitness goals!</p><br>
+            <a href="https://www.jumpropedudes.com/jump-rope-dudes-calculator" target="_blank" class="button is-primary">Check me out</a>
+          </div>
+          <div class="tags">
+            <span class="tag">Front End</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Jquery</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Listify.io</p>
+          <p class="subtitle">Data converter</p>
+          <div class="content">
+            <p>A conversion tool that transforms excel data into wrapped and comma separated data to port into sql. </p>
+            </br>
+            <a href="https://codepen.io/charkins/pen/aPpaeK" target="_blank" class="button is-primary">Check me out</a>
+          </div>
+          <div class="tags">
+            <span class="tag">Front End</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Jquery</span>
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Vue Book App</p>
+          <p class="subtitle">Reactive book list.</p>
+          <div class="content">
+            <p></p>
+          </div>
+          <div class="tags">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Vue.js</span>
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Calorie Calculator</p>
+          <p class="subtitle">Making Fitness Easy</p>
+          <div class="content">
+            <p>A calorie calculator to help you achieve your fitness goals!</p><br>
+            <a href="https://www.jumpropedudes.com/jump-rope-dudes-calculator" target="_blank" class="button is-primary">Check me out</a>
+          </div>
+          <div class="tags">
+            <span class="tag">Front End</span>
+            <span class="tag">Html</span>
+            <span class="tag">Css</span>
+            <span class="tag">Jquery</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="#Jobs">
+  <div class="container">
+    <h1 class="title is-1">Jobs</h1>
+    <article class="message is-primary">
+      <div class="message-header">
+        <p>PSM Marketing</p>
+      </div>
+      <div class="message-body">
+        <p class="is-1"><strong>Senior Full Stack Developer</strong></p>
+        <p class="is-1">March 2018 - Current</p>
+        Developing features and bug fixes on a customized CMS & IMS that is used by hundreds of clients on a dialy basis. Maintain/Update sql database tables, stored procedures. Develop client side features and updates to create better workflows and improve ease of use. Worked closely with client specifications from companies like Harley-Davidson, eLeads, WantFacts, etc.
+      </div>
+    </article>
+    <article class="message is-primary">
+      <div class="message-header">
+        <p>The Jumprope Dudes</p>
+      </div>
+      <div class="message-body">
+        <p class="is-1"><strong>Contracted Squarespace Developer</strong></p>
+        <p class="is-1">December 2018 - March 2019</p>
+        Updated site layout, added new content, updated seo related content. Created a Macro Calculator using jquery, html, css.
+      </div>
+    </article>
+    <article class="message is-primary">
+      <div class="message-header">
+        <p>Try Treats</p>
+      </div>
+      <div class="message-body">
+        <p class="is-1"><strong>Contracted Front End Developer</strong></p>
+        <p class="is-1">December 2017 - Feb 2018</p>
+        Updated site layout, added new content, updated seo related content. Worked with internal design team to update website using html, css, jquery.
+      </div>
+    </article>
+    <article class="message is-primary">
+      <div class="message-header">
+        <p>Pratt Industries</p>
+      </div>
+      <div class="message-body">
+        <p class="is-1"><strong>Jr Full Stack Developer</strong></p>
+        <p class="is-1">April 2015 - March 2018</p>
+        Developed multiple web applications for clients including: Walmart, Public Storage, and Home Depot. Developed features and add ons for internal tools; added features to e-commerce platform.
+        <br>
+        <p class="is-1"><strong>Intern Full Stack Developer</strong></p>
+        <p class="is-1">April 2014 - April 2015</p>
+        Learned front end web development and data entry.
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="Contact">
+  <div class="container">
+    <h1 class="title is-1">Contact Me</h1>
+    <p class="subtitle">I like beer and coffee too</p>
+    <form method="POST" style="max-width:960px; margin:0 auto;">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Name">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="Email Address">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Subject</label>
+        <div class="control">
+          <div class="select">
+            <select>
+        <option>Website Work</option>
+        <option>Full Stack Work</option>
+        <option>I Want To Hire</option>
+        <option>Other</option>
+      </select>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Modern Designs</h3>
-            <p class="text-muted mb-0">Mobile ready and friendly, using modern technology and cloud services.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Ready to Deploy Day 1</h3>
-            <p class="text-muted mb-0">You won't need to worry about day 1 updates; your project will be flawless and ready to launch by the deadline.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0">Is it really solid web dev if it's not made with love?</p>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <!-- <section class="page-section bg-dark text-white"> -->
-    <!-- <div class="container text-center"> -->
-      <!-- <h2 class="mb-4">Free Download at Start Bootstrap!</h2> -->
-      <!-- <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a> -->
-    <!-- </div> -->
-  <!-- </section> -->
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+      <div class="field">
+        <div class="control">
+          <button class="button is-link">Submit</button>
         </div>
       </div>
-  <div class="row">
-   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <form method="POST" data-netlify="true">
-     <div class="form-group ">
-      <label class="control-label " for="name">
-       Name
-      </label>
-      <input class="form-control" id="name" name="name" type="text"/>
-     </div>
-     <div class="form-group ">
-      <label class="control-label requiredField" for="email">
-       Email
-       <span class="asteriskField">
-        *
-       </span>
-      </label>
-      <input class="form-control" id="email" name="email" type="text"/>
-     </div>
-     <div class="form-group ">
-      <label class="control-label " for="message">
-       Message
-      </label>
-      <textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
-     </div>
-     <div class="form-group">
-      <div>
-       <button class="btn btn-primary " name="submit" type="submit">
-        Submit
-       </button>
-      </div>
-     </div>
     </form>
- </div>
-</div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - CoryHarkins.Com</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Built</strong> by <a href="https://jgthms.com">Cory Harkins - 2019</a>.
+    </p>
+  </div>
+</footer>
 
 </body>
 
