@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CoryHarkins.Com</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 </head>
 
 <body>
@@ -69,7 +70,7 @@
   </div>
 </section>
 
-<section id="#Portfolio" class="section">
+<!--<section id="#Portfolio" class="section">
   <div class="container">
     <h1 class="title is-1">Projects</h1>
 
@@ -186,7 +187,30 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
+	
+<div id="portfolio" class="vue-el">
+   <section id="#Portfolio" class="section">
+      <div class="container">
+         <h1 class="title is-1">Projects</h1>
+	  <nav class="panel">
+   <p>
+      <a class="is-active button">all</a>
+      <a class="button">front end</a>
+      <a class="button">back end</a>
+      <a class="button">full stack</a>
+   </p>
+</nav>  
+         <div class="tile is-ancestor tile-row">
+            <portfolio-item
+               v-for="item in items"
+               v-bind:key="item.id"
+               v-bind:item="item"
+               ></portfolio-item>
+         </div>
+      </div>
+   </section>
+</div>
 
 <section id="#Jobs" class="section">
   <div class="container">
@@ -310,6 +334,27 @@
 
   gtag('config', 'UA-84021076-2');
 </script>
+
+	<script>
+	Vue.component('portfolio-item', {
+  props: ['item'],
+  template:
+    '<div class="tile is-parent"><article class="tile is-child box"><p class="title">{{ item.title }}</p><p class="subtitle">{{item.subtitle}}</p><div class="content">{{ item.description }}<p><br><a href="{{ item.link }}" class="button is-primary">Check me out</a></div><div class="tags"><span class="tag" v-for="tag in item.tags">{{tag}}</span></div></article></div>'
+})
+  
+
+
+new Vue({ 
+  el: '#portfolio', 
+  data: {
+    items:  [
+      {id: 1, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery']}, 
+      {id: 2, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery']},
+      {id: 3, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery']}
+    ]
+  }
+})
+	</script>
 
 </body>
 
