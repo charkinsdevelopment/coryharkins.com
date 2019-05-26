@@ -5,6 +5,10 @@
     background-position: top;
 }
 
+.hero .title {
+font-family: 'Mandali', sans-serif;
+}
+
 .footer .icon {
     font-size: 24px;
 }
