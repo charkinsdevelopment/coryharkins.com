@@ -1,3 +1,6 @@
-.hero {background-image:url('/assets/poly-hero.svg'; background-position: top;
+.hero {
+    background-image: url(/assets/poly-hero.svg);
     background-repeat: no-repeat;
-    background-size: cover;)
+    background-size: cover;
+    background-position: top;
+}
