@@ -201,13 +201,12 @@
       <a class="button">full stack</a>
    </p>
 </nav>  
-         <div class="tile is-ancestor tile-row">
-            <portfolio-item
-               v-for="item in items"
-               v-bind:key="item.id"
-               v-bind:item="item"
-               ></portfolio-item>
-         </div>
+         <portfolio-item
+  v-for="item in items"
+  v-bind:key="item.id"
+  v-bind:item="item"
+  v-if="(item.project_type === project_type) || (project_type === 'all')"
+></portfolio-item>
       </div>
    </section>
 </div>
