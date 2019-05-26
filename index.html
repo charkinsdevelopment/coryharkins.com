@@ -334,27 +334,8 @@
 
   gtag('config', 'UA-84021076-2');
 </script>
-
-	<script>
-	Vue.component('portfolio-item', {
-  props: ['item'],
-  template:
-    '<div class="tile is-parent"><article class="tile is-child box"><p class="title">{{ item.title }}</p><p class="subtitle">{{item.subtitle}}</p><div class="content">{{ item.description }}<p><br><a href="{{ item.link }}" class="button is-primary">Check me out</a></div><div class="tags"><span class="tag" v-for="tag in item.tags">{{tag}}</span></div></article></div>'
-})
-  
-
-
-new Vue({ 
-  el: '#portfolio', 
-  data: {
-    items:  [
-      {id: 1, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery']}, 
-      {id: 2, title: 'Macro Calculator', subtitle: 'Goal Setting For Macronutrients', description: 'A calculator that outputs recommended calories and macros to help you gain/lose weight', link: 'https://www.jumpropedudes.com/jump-rope-dudes-calculator', tags: ['Front End', 'Html', 'Css', 'Jquery']},
-      {id: 3, title: 'TBD', subtitle: 'Will fill in later', description: 'this is a place holder.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Full Stack', 'Html', 'Css', 'Jquery', 'Asp.Net Mvc', 'C#', 'SQL']}
-    ]
-  }
-})
-	</script>
+<script src="/coponents/portfolio-item.js"></script>
+<script src="/js/app.js"></script>
 
 </body>
 
