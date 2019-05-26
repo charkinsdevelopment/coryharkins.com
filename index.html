@@ -74,20 +74,20 @@
    <section id="#Portfolio" class="section">
       <div class="container">
          <h1 class="title is-1">Projects</h1>
-	  <nav class="panel">
-   <p>
-      <a class="is-active button">all</a>
-      <a class="button">front end</a>
-      <a class="button">back end</a>
-      <a class="button">full stack</a>
-   </p>
-</nav>  
+         <nav class="panel">
+            <p>
+               <a class="button" :class="[ project_type === 'all' ? 'is-primary is-active' : '']" @click="filter_projectType('all')">all</a>
+               <a class="button" :class="[ project_type === 'front_end' ? 'is-primary is-active' : '']" @click="filter_projectType('front_end')">front end</a>
+               <a class="button" :class="[ project_type === 'back_end' ? 'is-primary is-active' : '']" @click="filter_projectType('back_end')">back end</a>
+               <a class="button" :class="[ project_type === 'full_stack' ? 'is-primary is-active' : '']" @click="filter_projectType('full_stack')">full stack</a>
+            </p>
+         </nav>
          <portfolio-item
-  v-for="item in items"
-  v-bind:key="item.id"
-  v-bind:item="item"
-  v-if="(item.project_type === project_type) || (project_type === 'all')"
-></portfolio-item>
+            v-for="item in items"
+            v-bind:key="item.id"
+            v-bind:item="item"
+            v-if="(item.project_type === project_type) || (project_type === 'all')"
+            ></portfolio-item>
       </div>
    </section>
 </div>
