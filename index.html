@@ -69,125 +69,6 @@
     </div>
   </div>
 </section>
-
-<!--<section id="#Portfolio" class="section">
-  <div class="container">
-    <h1 class="title is-1">Projects</h1>
-
-    <nav class="panel">
-      <p>
-        <a class="is-active button">all</a>
-        <a class="button">front end</a>
-        <a class="button">back end</a>
-        <a class="button">full stack</a>
-      </p>
-    </nav>
-
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Listify.io</p>
-          <p class="subtitle">Data converter</p>
-          <div class="content">
-            <p>A conversion tool that transforms excel data into wrapped and comma separated data to port into sql. </p>
-            </br>
-            <a href="https://codepen.io/charkins/pen/aPpaeK" target="_blank" class="button is-primary">Check me out</a>
-          </div>
-          <div class="tags">
-            <span class="tag">Front End</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Jquery</span>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Vue Book App</p>
-          <p class="subtitle">Reactive book list.</p>
-          <div class="content">
-            <p></p>
-          </div>
-          <div class="tags">
-            <span class="tag">Full Stack</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Vue.js</span>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Calorie Calculator</p>
-          <p class="subtitle">Making Fitness Easy</p>
-          <div class="content">
-            <p>A calorie calculator to help you achieve your fitness goals!</p><br>
-            <a href="https://www.jumpropedudes.com/jump-rope-dudes-calculator" target="_blank" class="button is-primary">Check me out</a>
-          </div>
-          <div class="tags">
-            <span class="tag">Front End</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Jquery</span>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Listify.io</p>
-          <p class="subtitle">Data converter</p>
-          <div class="content">
-            <p>A conversion tool that transforms excel data into wrapped and comma separated data to port into sql. </p>
-            </br>
-            <a href="https://codepen.io/charkins/pen/aPpaeK" target="_blank" class="button is-primary">Check me out</a>
-          </div>
-          <div class="tags">
-            <span class="tag">Front End</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Jquery</span>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Vue Book App</p>
-          <p class="subtitle">Reactive book list.</p>
-          <div class="content">
-            <p></p>
-          </div>
-          <div class="tags">
-            <span class="tag">Full Stack</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Vue.js</span>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title">Calorie Calculator</p>
-          <p class="subtitle">Making Fitness Easy</p>
-          <div class="content">
-            <p>A calorie calculator to help you achieve your fitness goals!</p><br>
-            <a href="https://www.jumpropedudes.com/jump-rope-dudes-calculator" target="_blank" class="button is-primary">Check me out</a>
-          </div>
-          <div class="tags">
-            <span class="tag">Front End</span>
-            <span class="tag">Html</span>
-            <span class="tag">Css</span>
-            <span class="tag">Jquery</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>-->
 	
 <div id="portfolio" class="vue-el">
    <section id="#Portfolio" class="section">
@@ -332,7 +213,32 @@
   gtag('js', new Date());
   gtag('config', 'UA-84021076-2');
 </script>
-<script src="/js/portfolio-app.js"></script>
+	<script>
+	Vue.component('portfolio-item', {
+  props: ['item'],
+  template:
+    '<div class="tile is-ancestor tile-row"><div class="tile is-parent"><article class="tile is-child box"><p class="title">{{ item.title }}</p><p class="subtitle">{{item.subtitle}}</p><div class="content">{{ item.description }}<p><br><a href="{{ item.link }}" class="button is-primary">Check me out</a></div><div class="tags"><span class="tag" v-for="tag in item.tags">{{tag}}</span></div></article></div></div>'
+});
+
+
+new Vue({ 
+  el: '#portfolio', 
+  data: {
+    project_type: 'all',
+    items:  [
+      {id: 1, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end'}, 
+      {id: 2, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end'},
+      {id: 3, title: 'Back End Test', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'back_end'}, 
+      {id: 4, title: 'Full Stack Test', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'full_stack'}
+    ]
+  },
+  methods: {
+    filter_projectType: function(project_type){
+	this.project_type = project_type;
+      }
+  }
+})
+	</script>
 </body>
 
 </html>
