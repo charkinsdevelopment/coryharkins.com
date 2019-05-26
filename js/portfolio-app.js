@@ -18,7 +18,7 @@ new Vue({
   },
   methods: {
     filter_projectType: function(project_type){
-				this.project_type = project_type;
-			}
+	this.project_type = project_type;
+      }
   }
 })
