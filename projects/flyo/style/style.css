@@ -1,0 +1,28 @@
+body {font-family: 'Open Sans', sans-serif; max-width: 1440px; margin:0 auto;}
+
+h1,h2,h3,h4,h5,h6, .tile {font-family: 'Raleway', sans-serif;}
+
+.green {background-color:#06D79D; color:#fff;}
+.gray {color: hsl(0, 0%, 50%)}
+.illustration-main {
+    background: -moz-linear-gradient(45deg, #625db1 0%, #1a1171 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #625db1 0%,#1a1171 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #625db1 0%,#1a1171 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#625db1', endColorstr='#1a1171',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    text-align:center;
+}
+.illustration-main img {padding:15%;}
+
+a.navbar-item:hover{color:#06D79D;}
+
+.columns.is-gapless>.column {
+    padding: 35px !important;
+    position:relative;
+}
+.form-container {
+    padding: 0 1.5rem;
+}
+
+.text-right{text-align:right;}
+.privacy-policy a {font-size:14px;}
+.privacy-policy {position:absolute; bottom:15px; right:15px;}
