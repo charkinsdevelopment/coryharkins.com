@@ -86,7 +86,7 @@
     </div>
   </section>
 
-  <section class="section stats">
+  <section id="stats" class="section stats">
     <div class="container">
       <nav class="level">
         <div class="level-item has-text-centered">
@@ -441,10 +441,23 @@
       }, stepTime);
     }
 
-    animateValue("clients", 0, 35, 1200);
-    animateValue("tweets", 0, 102, 1200);
-    animateValue("followers", 0, 58, 1200);
-    animateValue("code", 0, 47, 1200);
+    // Get the H1 heading
+    var stats = document.getElementById('stats');
+
+    // Get it's position in the viewport
+    var bounding = stats.getBoundingClientRect();
+
+    if (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    ) {
+      animateValue("clients", 0, 35, 1200);
+      animateValue("tweets", 0, 102, 1100);
+      animateValue("followers", 0, 58, 1200);
+      animateValue("code", 0, 47, 1200);
+    } 
   </script>
 </body>
 
