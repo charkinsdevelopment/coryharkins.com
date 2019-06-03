@@ -20,4 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
+
+
+    function animateValue(id, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = document.getElementById(id);
+      var timer = setInterval(function () {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+
+    // Get the H1 heading
+    var stats = document.getElementById('stats');
+
+    // Get it's position in the viewport
+    var bounding = stats.getBoundingClientRect();
+
+    if (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    ) {
+      animateValue("clients", 0, 35, 1200);
+      animateValue("tweets", 0, 102, 1100);
+      animateValue("followers", 0, 58, 1200);
+      animateValue("code", 0, 47, 1200);
+    } 
   });
