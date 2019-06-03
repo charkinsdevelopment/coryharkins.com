@@ -41,7 +41,7 @@
 
         <a class="navbar-item" href="#reviews">
           Reviews
-        </a> 
+        </a>
 
         <a class="navbar-item" href="/blog/main">
           Blog
@@ -87,38 +87,38 @@
   </section>
 
   <section>
-      <div class="container">
-    <nav class="level">
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Happy Clients</p>
-          <p id="clients" class="title">35</p>
+    <div class="container">
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Happy Clients</p>
+            <p id="clients" class="title">35</p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Tweets Posted</p>
-          <p id="tweets" class="title">102</p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Tweets Posted</p>
+            <p id="tweets" class="title">102</p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Followers Gained</p>
-          <p id="followers" class="title">58</p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Followers Gained</p>
+            <p id="followers" class="title">58</p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Projects Contributed To</p>
-          <p id="code" class="title">47</p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Projects Contributed To</p>
+            <p id="code" class="title">47</p>
+          </div>
         </div>
-      </div>
-    </nav>
-    
-      </div>
-    </section>
-    
-    
+      </nav>
+
+    </div>
+  </section>
+
+
 
   <div id="portfolio" class="vue-el">
     <section id="#Portfolio" class="section">
@@ -424,6 +424,28 @@
         }
       }
     })
+  </script>
+
+  <script>
+    function animateValue(id, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = document.getElementById(id);
+      var timer = setInterval(function () {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+
+    animateValue("clients", 0, 35, 1200);
+    animateValue("tweets", 0, 102, 1200);
+    animateValue("followers", 0, 58, 1200);
+    animateValue("code", 0, 47, 1200);
   </script>
 </body>
 
