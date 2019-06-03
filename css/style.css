@@ -19,38 +19,3 @@ font-family: 'Mandali', sans-serif;
 #skills .tile {text-align:center;}
 
 #reviews .checked {color:orange;}
-#reviews .wrapper {
-    height: 200px;
-    width: 632px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  #reviews .button-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-  }
-  
-  #reviews .carousel {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    left: 0;
-    transition: all 1s ease;
-  }
-  
-  #reviews .card {
-    background: black;
-    min-width: 200px;
-    height: 200px;
-    margin-right: 1rem;
-    display: inline-block;
-  }
