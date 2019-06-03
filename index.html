@@ -8,334 +8,360 @@
   <title>CoryHarkins.Com</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="/js/clientscript.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
 </head>
 
-<body>	
-<nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://www.coryharkins.com">
-      <span class="subtitle">CoryHarkins.com</span>
-    </a>
-
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navigationBar">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navigationBar" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item active" href="/">
-        Home
+<body>
+  <nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.coryharkins.com">
+        <span class="subtitle">CoryHarkins.com</span>
       </a>
 
-      <a class="navbar-item" href="#portfolio">
-        Portfolio
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navigationBar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-      
-      <a class="navbar-item" href="/blog/main">
-        Blog
-      </a>
-      
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+    </div>
+
+    <div id="navigationBar" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item active" href="/">
+          Home
         </a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="#about">
-            About
-          </a>	
-          <a class="navbar-item" href="#jobs">
-            Jobs
+        <a class="navbar-item" href="#portfolio">
+          Portfolio
+        </a>
+
+        <a class="navbar-item" href="/blog/main">
+          Blog
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
           </a>
-	        <a class="navbar-item" href="#skills">
-            Skills
-          </a>
-          <a class="navbar-item" href="#contact">
-            Contact
-          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#about">
+              About
+            </a>
+            <a class="navbar-item" href="#jobs">
+              Jobs
+            </a>
+            <a class="navbar-item" href="#skills">
+              Skills
+            </a>
+            <a class="navbar-item" href="#contact">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="hero is-primary is-fullheight has-text-centered">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title is-1">
-        Not Your Average Full Stack Guy
-      </h1>
-      <h2 class="subtitle">
-        Full Stack Developer currently living south of Atlanta. Always down for remote work.
-      </h2>
-      <a href="#contact" class="button is-primary is-inverted is-outlined">I need a website</a>
-      <a href="#contact" class="button is-danger is-inverted is-outlined">I am looking to hire</a>
-    </div>
-  </div>
-</section>
-	
-<div id="portfolio" class="vue-el">
-   <section id="#Portfolio" class="section">
+  <section class="hero is-primary is-fullheight has-text-centered">
+    <div class="hero-body">
       <div class="container">
-         <h1 class="title is-1">Projects</h1>
-         <nav class="panel">
-            <p>
-               <a class="button" :class="[ project_type === 'all' ? 'is-primary is-active' : '']" @click="filter_projectType('all')">all</a>
-               <a class="button" :class="[ project_type === 'front_end' ? 'is-primary is-active' : '']" @click="filter_projectType('front_end')">front end</a>
-               <a class="button" :class="[ project_type === 'back_end' ? 'is-primary is-active' : '']" @click="filter_projectType('back_end')">back end</a>
-               <a class="button" :class="[ project_type === 'full_stack' ? 'is-primary is-active' : '']" @click="filter_projectType('full_stack')">full stack</a>
-            </p>
-         </nav>
-         <portfolio-item
-            v-for="item in items"
-            v-bind:key="item.id"
-            v-bind:item="item"
-            v-if="(item.project_type === project_type) || (project_type === 'all')"
-            ></portfolio-item>
-      </div>
-   </section>
-</div>
-
-<section id="about" class="section">
-	<div class="container">
-	<h1 class="title is-1">About</h1>
-	<p class="subtitle">Hey... I'm human too.</p>
-	</div>
-</section>
-	
-<section id="#jobs" class="section">
-  <div class="container">
-    <h1 class="title is-1">Jobs</h1>
-    <article class="message is-primary">
-      <div class="message-header">
-        <p>PSM Marketing</p>
-      </div>
-      <div class="message-body">
-        <p class="is-1"><strong>Senior Full Stack Developer</strong></p>
-        <p class="is-1">March 2018 - Current</p>
-        Developing features and bug fixes on a customized CMS & IMS that is used by hundreds of clients on a dialy basis. Maintain/Update sql database tables, stored procedures. Develop client side features and updates to create better workflows and improve ease of use. Worked closely with client specifications from companies like Harley-Davidson, eLeads, WantFacts, etc.
-      </div>
-    </article>
-    <article class="message is-primary">
-      <div class="message-header">
-        <p>The Jumprope Dudes</p>
-      </div>
-      <div class="message-body">
-        <p class="is-1"><strong>Contracted Squarespace Developer</strong></p>
-        <p class="is-1">December 2018 - March 2019</p>
-        Updated site layout, added new content, updated seo related content. Created a Macro Calculator using jquery, html, css.
-      </div>
-    </article>
-    <article class="message is-primary">
-      <div class="message-header">
-        <p>Try Treats</p>
-      </div>
-      <div class="message-body">
-        <p class="is-1"><strong>Contracted Front End Developer</strong></p>
-        <p class="is-1">December 2017 - Feb 2018</p>
-        Updated site layout, added new content, updated seo related content. Worked with internal design team to update website using html, css, jquery.
-      </div>
-    </article>
-    <article class="message is-primary">
-      <div class="message-header">
-        <p>Pratt Industries</p>
-      </div>
-      <div class="message-body">
-        <p class="is-1"><strong>Jr Full Stack Developer</strong></p>
-        <p class="is-1">April 2015 - March 2018</p>
-        Developed multiple web applications for clients including: Walmart, Public Storage, and Home Depot. Developed features and add ons for internal tools; added features to e-commerce platform.
-        <br>
-        <p class="is-1"><strong>Intern Full Stack Developer</strong></p>
-        <p class="is-1">April 2014 - April 2015</p>
-        Learned front end web development and data entry.
-      </div>
-    </article>
-  </div>
-</section>
-<section class="section" id="skills">
-  <div class="container">
-    <h1 class="title is-1">Skills</h1>
-    <p class="subtitle">technologies I use most frequently</p>
-    <div class="tile is-ancestor">
-      <div class="tile is-12">
-        <div class="tile">
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://backtrace.io/wp-content/uploads/2018/05/C_logo-compressor-600x600.png">
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="data:image/png;base64,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"
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://fuzati.com/wp-content/uploads/2016/12/CSS-Logo.png"
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://ih0.redbubble.net/image.393347411.1344/flat,550x550,075,f.jpg"
-            </article>
-          </div>
-
-        </div>
+        <h1 class="title is-1">
+          Not Your Average Full Stack Guy
+        </h1>
+        <h2 class="subtitle">
+          Full Stack Developer currently living south of Atlanta. Always down for remote work.
+        </h2>
+        <a href="#contact" class="button is-primary is-inverted is-outlined">I need a website</a>
+        <a href="#contact" class="button is-danger is-inverted is-outlined">I am looking to hire</a>
       </div>
     </div>
-          <div class="tile is-ancestor">
-      <div class="tile is-12">
-        <div class="tile">
+  </section>
 
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg">
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png">
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/121484471/original/bd274735a83321cd76748b759852073688edaed1/maintain-and-update-asp-dot-net-mvc-website.jpg">
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child">
-              <img src="https://seeklogo.net/wp-content/uploads/2014/10/jquery-logo-vector-download.jpg">
-            </article>
-          </div>
-
-        </div>
+  <div id="portfolio" class="vue-el">
+    <section id="#Portfolio" class="section">
+      <div class="container">
+        <h1 class="title is-1">Projects</h1>
+        <nav class="panel">
+          <p>
+            <a class="button" :class="[ project_type === 'all' ? 'is-primary is-active' : '']"
+              @click="filter_projectType('all')">all</a>
+            <a class="button" :class="[ project_type === 'front_end' ? 'is-primary is-active' : '']"
+              @click="filter_projectType('front_end')">front end</a>
+            <a class="button" :class="[ project_type === 'back_end' ? 'is-primary is-active' : '']"
+              @click="filter_projectType('back_end')">back end</a>
+            <a class="button" :class="[ project_type === 'full_stack' ? 'is-primary is-active' : '']"
+              @click="filter_projectType('full_stack')">full stack</a>
+          </p>
+        </nav>
+        <portfolio-item v-for="item in items" v-bind:key="item.id" v-bind:item="item"
+          v-if="(item.project_type === project_type) || (project_type === 'all')"></portfolio-item>
       </div>
+    </section>
+  </div>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h1 class="title is-1">About</h1>
+      <p class="subtitle">Hey... I'm human too.</p>
     </div>
-  </div>
-</section>
-	
-<section id="contact" class="section">
-  <div class="container">
-    <h1 class="title is-1">Contact Me</h1>
-    <p class="subtitle">I like beer and coffee too</p>
-    <form method="POST" name="Contact" data-netlify="true" style="max-width:960px; margin:0 auto;">
-      
-	  <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input class="input" name="Name" type="text" placeholder="Name">
-        </div>
-      </div>
-      
-	  <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input class="input" name="Email" type="email" placeholder="Email Address">
-        </div>
-      </div>
+  </section>
 
-      <div class="field">
-        <label class="label">Subject</label>
-        <div class="control">
-          <div class="select">
-            <select name="Subject">
-				<option>Website Work</option>
-				<option>Full Stack Work</option>
-				<option>I Want To Hire</option>
-				<option>Other</option>
-			</select>
+  <section id="#jobs" class="section">
+    <div class="container">
+      <h1 class="title is-1">Jobs</h1>
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>PSM Marketing</p>
+        </div>
+        <div class="message-body">
+          <p class="is-1"><strong>Senior Full Stack Developer</strong></p>
+          <p class="is-1">March 2018 - Current</p>
+          Developing features and bug fixes on a customized CMS & IMS that is used by hundreds of clients on a dialy
+          basis. Maintain/Update sql database tables, stored procedures. Develop client side features and updates to
+          create better workflows and improve ease of use. Worked closely with client specifications from companies like
+          Harley-Davidson, eLeads, WantFacts, etc.
+        </div>
+      </article>
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>The Jumprope Dudes</p>
+        </div>
+        <div class="message-body">
+          <p class="is-1"><strong>Contracted Squarespace Developer</strong></p>
+          <p class="is-1">December 2018 - March 2019</p>
+          Updated site layout, added new content, updated seo related content. Created a Macro Calculator using jquery,
+          html, css.
+        </div>
+      </article>
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>Try Treats</p>
+        </div>
+        <div class="message-body">
+          <p class="is-1"><strong>Contracted Front End Developer</strong></p>
+          <p class="is-1">December 2017 - Feb 2018</p>
+          Updated site layout, added new content, updated seo related content. Worked with internal design team to
+          update website using html, css, jquery.
+        </div>
+      </article>
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>Pratt Industries</p>
+        </div>
+        <div class="message-body">
+          <p class="is-1"><strong>Jr Full Stack Developer</strong></p>
+          <p class="is-1">April 2015 - March 2018</p>
+          Developed multiple web applications for clients including: Walmart, Public Storage, and Home Depot. Developed
+          features and add ons for internal tools; added features to e-commerce platform.
+          <br>
+          <p class="is-1"><strong>Intern Full Stack Developer</strong></p>
+          <p class="is-1">April 2014 - April 2015</p>
+          Learned front end web development and data entry.
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="section" id="skills">
+    <div class="container">
+      <h1 class="title is-1">Skills</h1>
+      <p class="subtitle">technologies I use most frequently</p>
+      <div class="tile is-ancestor">
+        <div class="tile is-12">
+          <div class="tile">
+
+            <div class="tile is-parent">
+              <article class="tile is-child">
+                <img src="https://backtrace.io/wp-content/uploads/2018/05/C_logo-compressor-600x600.png">
+              </article>
+            </div>
+
+            <div class="tile is-parent">
+              <article class="tile is-child">
+                <img
+                  src="data:image/png;base64,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"
+                  </article> </div> <div class="tile is-parent">
+                <article class="tile is-child">
+                  <img src="https://fuzati.com/wp-content/uploads/2016/12/CSS-Logo.png" </article> </div> <div
+                    class="tile is-parent">
+                  <article class="tile is-child">
+                    <img src="https://ih0.redbubble.net/image.393347411.1344/flat,550x550,075,f.jpg" </article> </div>
+                      </div> </div> </div> <div class="tile is-ancestor">
+                    <div class="tile is-12">
+                      <div class="tile">
+
+                        <div class="tile is-parent">
+                          <article class="tile is-child">
+                            <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg">
+                          </article>
+                        </div>
+
+                        <div class="tile is-parent">
+                          <article class="tile is-child">
+                            <img src="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png">
+                          </article>
+                        </div>
+
+                        <div class="tile is-parent">
+                          <article class="tile is-child">
+                            <img
+                              src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/121484471/original/bd274735a83321cd76748b759852073688edaed1/maintain-and-update-asp-dot-net-mvc-website.jpg">
+                          </article>
+                        </div>
+
+                        <div class="tile is-parent">
+                          <article class="tile is-child">
+                            <img src="https://seeklogo.net/wp-content/uploads/2014/10/jquery-logo-vector-download.jpg">
+                          </article>
+                        </div>
+
+                      </div>
+                    </div>
+            </div>
+          </div>
+  </section>
+  <section class="section">
+    <h1 class="title is-1">Reviews</h1>
+    <div class="container">
+      <div id="carousel" class="carousel">
+        <div class="item-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </div>
+        <div class="item-2">
+          <!-- Slide Content -->
+        </div>
+        <div class="item-3">
+          <!-- Slide Content -->
+        </div>
+        <div class="item-3">
+          <!-- Slide Content -->
+        </div>
+      </div>
+      <!-- End Carousel -->
+    </div>
+  </section>
+  <section id="contact" class="section">
+    <div class="container">
+      <h1 class="title is-1">Contact Me</h1>
+      <p class="subtitle">I like beer and coffee too</p>
+      <form method="POST" name="Contact" data-netlify="true" style="max-width:960px; margin:0 auto;">
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" name="Name" type="text" placeholder="Name">
           </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Message</label>
-        <div class="control">
-          <textarea name="Message" class="textarea" placeholder="Textarea"></textarea>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" name="Email" type="email" placeholder="Email Address">
+          </div>
         </div>
-      </div>
-	  
-      <div class="field">
-        <div class="control">
-          <button class="button is-link">Submit</button>
+
+        <div class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select name="Subject">
+                <option>Website Work</option>
+                <option>Full Stack Work</option>
+                <option>I Want To Hire</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
         </div>
-      </div>
-	  
-    </form>
-  </div>
-</section>
 
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Built</strong> by Cory Harkins - 2019.
-    </p>
-	  <p>
-	  	<span class="icon">
-		  <a href="https://twitter.com/harkins_cory" target="_blank"><i class="fab fa-twitter-square"></i></a>
-	  	</span>
-	        <span class="icon">
-		  <a href="https://github.com/charkinsdevelopment" target="_blank"><i class="fab fa-github-square"></i></a>
-	  	</span>
-	  	<span class="icon">
-		  <a href="https://www.linkedin.com/in/coryharkins" target="_blank"><i class="fab fa-linkedin"></i></a>
-	  	</span>
-	  </p>
-  </div>
-</footer>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea name="Message" class="textarea" placeholder="Textarea"></textarea>
+          </div>
+        </div>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84021076-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84021076-2');
-</script>
-<script>
-	Vue.component('portfolio-item', {
-  props: ['item'],
-  template:
-    '<div class="tile is-parent"><article class="tile is-child box"><p class="title">{{ item.title }}</p><p class="subtitle">{{item.subtitle}}</p><div class="content">{{ item.description }}<p><br><a :href="item.link" class="button is-primary">Check me out</a></p></div><div class="tags"><span class="tag" v-for="tag in item.tags">{{tag}}</span></div><figure class="image"><img :src="item.image_link"></figure></article></div>'
-});
+        <div class="field">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Built</strong> by Cory Harkins - 2019.
+      </p>
+      <p>
+        <span class="icon">
+          <a href="https://twitter.com/harkins_cory" target="_blank"><i class="fab fa-twitter-square"></i></a>
+        </span>
+        <span class="icon">
+          <a href="https://github.com/charkinsdevelopment" target="_blank"><i class="fab fa-github-square"></i></a>
+        </span>
+        <span class="icon">
+          <a href="https://www.linkedin.com/in/coryharkins" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    bulmaCarousel.attach('#carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 4
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84021076-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-84021076-2');
+  </script>
+  <script>
+    Vue.component('portfolio-item', {
+      props: ['item'],
+      template:
+        '<div class="tile is-parent"><article class="tile is-child box"><p class="title">{{ item.title }}</p><p class="subtitle">{{item.subtitle}}</p><div class="content">{{ item.description }}<p><br><a :href="item.link" class="button is-primary">Check me out</a></p></div><div class="tags"><span class="tag" v-for="tag in item.tags">{{tag}}</span></div><figure class="image"><img :src="item.image_link"></figure></article></div>'
+    });
 
 
-new Vue({ 
-  el: '#portfolio', 
-  data: {
-    project_type: 'all',
-    items:  [
-      {id: 1, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/listify/desktop.png'}, 
-      {id: 2, title: 'JumpRopeDudes.Com', subtitle: 'Fitness Website', description: 'A jump rope and fitness website that will help you lose weight and have fun while doing it.', link: 'https://www.jumpropedudes.com', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/jumpropedudes/desktop.png'},
-      {id: 3, title: 'Macro Calculator', subtitle: 'Macros Made Easy', description: 'A calculator that tells you your calorie goals to gain or lose weight.', link: 'https://www.jumpropedudes.com/calculator', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/macrocalc/desktop.png'},
-      {id: 4, title: 'Fylo Landing Page', subtitle: 'Cloud Storage Company', description: 'A registration page for Fylo - Secure Storage.', link: '/projects/fylo', tags: ['Front End', 'Html', 'Bulma.css'], project_type: 'front_end', image_link: '/projects/fylo/desktop.png'}
-    ]
-  },
-  methods: {
-    filter_projectType: function(project_type){
-	this.project_type = project_type;
+    new Vue({
+      el: '#portfolio',
+      data: {
+        project_type: 'all',
+        items: [
+          { id: 1, title: 'Listify.io', subtitle: 'Data converter', description: 'A conversion tool that transforms excel data into wrapped and comma separated data to port into sql.', link: 'https://codepen.io/charkins/pen/aPpaeK', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/listify/desktop.png' },
+          { id: 2, title: 'JumpRopeDudes.Com', subtitle: 'Fitness Website', description: 'A jump rope and fitness website that will help you lose weight and have fun while doing it.', link: 'https://www.jumpropedudes.com', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/jumpropedudes/desktop.png' },
+          { id: 3, title: 'Macro Calculator', subtitle: 'Macros Made Easy', description: 'A calculator that tells you your calorie goals to gain or lose weight.', link: 'https://www.jumpropedudes.com/calculator', tags: ['Front End', 'Html', 'Css', 'Jquery'], project_type: 'front_end', image_link: '/projects/macrocalc/desktop.png' },
+          { id: 4, title: 'Fylo Landing Page', subtitle: 'Cloud Storage Company', description: 'A registration page for Fylo - Secure Storage.', link: '/projects/fylo', tags: ['Front End', 'Html', 'Bulma.css'], project_type: 'front_end', image_link: '/projects/fylo/desktop.png' }
+        ]
+      },
+      methods: {
+        filter_projectType: function (project_type) {
+          this.project_type = project_type;
+        }
       }
-  }
-})
-	</script>
+    })
+  </script>
 </body>
 
 </html>
