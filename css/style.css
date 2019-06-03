@@ -17,3 +17,5 @@ font-family: 'Mandali', sans-serif;
 
 #skills .tile img {max-height:140px; text-align:center;}
 #skills .tile {text-align:center;}
+
+#reviews .checked {color:orange;}
