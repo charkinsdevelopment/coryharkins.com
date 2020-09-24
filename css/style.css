@@ -1,4 +1,4 @@
-html {scroll-behavior:smooth;}
+html {scroll-behavior:smooth; background:#fff;}
 
 .hero {
     background-image: url(/assets/poly-hero.svg);
