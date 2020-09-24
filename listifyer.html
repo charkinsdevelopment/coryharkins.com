@@ -1,0 +1,258 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<h1>Listify.io</h1>
+<p class="instructions">Paste your list that needs to be wrapped and comma delimited</p>
+<p class="notes"><i>V1.0 - 12-20-2018 - Currently only supports single quote wrapping.</i></p>
+<p class="notes"><i>V1.1 - 12-21-2018 - Now supports 'new line', 'comma', and 'semi-colon' seperated items.</i></p>
+<p class="notes"><i>V1.2 - 1-30-2019 - Now supports single quote and double quote wrapping.</i></p>
+<p class="notes"><i>Developed by Cory Harkins</i></p>
+<hr width="50%">
+<div id="Form">
+<div id="Items">
+  <h2>Items</h2>
+  <textarea rows="10" cols="50" placeholder="Put items to listify here."></textarea>
+<div>
+  <input type="radio" id="wrapper" name="drone" value="single"
+         checked>
+  <label for="single">Single Quote Wrap</label>
+</div>
+  <div>
+  <input type="radio" id="wrapper" name="drone" value="double">
+  <label for="double">Double Quote Wrap</label>
+</div>
+  <div id="CmdListify" class="button">Listify!</div>
+</div>
+
+<div id="Results">
+  <h2>Results</h2>
+  <textarea rows="10" cols="50"></textarea>
+  <div id="CmdCopy" class="button">Copy To Clipboard</div>
+</div>
+
+<div id="Alert">
+  <p class="message"></p>
+</div>
+</div>
+
+<style>
+body {
+  font-family: arial;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(270deg, #12d9a6, #a144d5, #44a1d5);
+background-size: 600% 600%;
+-webkit-animation: AnimationName 10s ease infinite;
+animation: AnimationName 10s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.button {
+  transition:all .5s ease;
+  cursor:pointer;
+  border: 1px solid #25729a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: arial, helvetica, sans-serif;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  width: 350px;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3093c7;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#3093c7),
+    to(#1c5a85)
+  );
+  background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+  background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+  background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+  background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+  background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      GradientType=0,
+      startColorstr=#3093c7,
+      endColorstr=#1c5a85
+    );
+  margin: 0 auto;
+}
+
+.button:hover{background:#1B74A2; transition:all .5s ease; font-size:15px;}
+textarea {border-radius:3px; margin-bottom:10px;}
+#Results {
+  display: none;
+}
+#Results.active {
+  display: block;
+}
+
+#Alert {
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #ffffff;
+  display:none;
+  position:fixed;
+  top:0;
+  left:50vw;
+  margin-left:-25%;
+}
+
+#Alert.error {background: #ff3019;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); 
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );}
+#Alert.success {background: #00b09b; 
+background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+background: linear-gradient(to right, #96c93d, #00b09b); 
+}
+
+#Form{padding:50px;}
+.notes{font-size:10px;}
+
+textarea.error{border-color:red; background:#ff8080; color:#fff; }
+textarea.error::-webkit-input-placeholder {
+color: #fff;
+}
+
+textarea.error:-moz-placeholder { /* Firefox 18- */
+color: #fff;  
+}
+
+textarea.error::-moz-placeholder {  /* Firefox 19+ */
+color: #fff;  
+}
+
+textarea.error:-ms-input-placeholder {
+color: #fff;  
+}}
+</style>
+
+<script>
+$("document").ready(function() {
+  var ScrollToElement = function(Selector){
+    $([document.documentElement, document.body]).animate({
+        scrollTop: Selector.offset().top
+    }, 900);
+  }
+  var GetDelimiter = function(){
+    var itemsText = $('#Items textarea').val();
+    var delimiter = '\n';
+    if(itemsText.indexOf(',') != -1) delimiter = ',';
+    if(itemsText.indexOf(';') != -1) delimiter = ';';
+    return delimiter;
+  }
+  
+  var ResetValidation = function(){
+     //reset validation
+    $('textarea').each(function(){
+        $(this).removeClass('error');
+      });
+    $('#Alert').removeClass('success');
+    $('#Alert').removeClass('error');
+    
+    $('#Results textarea').val('');
+    $('#Results').removeClass('active');
+  }
+  
+  var GenerateAlert = function(message, type){
+    var alertBox = $('#Alert');
+    var alertBoxMessage = $('#Alert .message');
+    
+    alertBoxMessage.text(message);
+    alertBox.addClass(type);
+    alertBox.slideDown();
+    
+    setTimeout(function(){
+      alertBox.slideUp();
+    }, 2000);
+    
+  }
+  
+  var ShowResults = function(arrResults){
+    var resultsTextArea = $('#Results textarea');
+    var results = $("#Results");
+    var finalizedResults = '';
+    for(var idx = 0; idx < arrResults.length; idx++){
+      finalizedResults += arrResults[idx];
+    }
+    resultsTextArea.val(finalizedResults);
+    results.addClass('active');
+    ScrollToElement($('#Results'));
+  };
+  var MakeList = function(delimiter) {
+    var bFail = false;
+    var items = $("#Items textarea");
+    if (items.val().length == 0){
+      GenerateAlert('You did not enter anything', 'error');
+      bFail = true;
+    }
+    if(bFail){
+      $('textarea').each(function(){
+        $(this).addClass('error');
+      });
+      return false;
+    } 
+    var resultsLines = [];
+    
+    $.each(
+      $("#Items textarea")
+        .val()
+        .split(delimiter),
+      function(i, line) {
+        if (line) {
+          var wrap = '\'';
+          if($('#wrapper:checked').val() == 'double') wrap = '\"'
+          if(i == $("#Items textarea")
+        .val()
+        .split(delimiter).length - 1){
+            resultsLines.push(wrap + line.trim() + wrap +'\n');
+          } else {
+            resultsLines.push(wrap + line.trim() + wrap +',\n');  
+          }
+          
+        } else {
+          resultsLines.push("");
+        }
+      }
+    );
+    ShowResults(resultsLines);
+  };
+  
+  $("#CmdListify").click(function() {
+    ResetValidation();
+    var delimiter = GetDelimiter(); 
+    MakeList(delimiter);
+  });
+  
+  $('#CmdCopy').click(function(){
+    $('#Results textarea').select();
+    document.execCommand('copy');
+    GenerateAlert('Copied to Clipboard!','success');
+    document.getSelection().removeAllRanges();
+  });
+});
+</script>

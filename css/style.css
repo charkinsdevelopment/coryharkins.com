@@ -1,0 +1,22 @@
+html {scroll-behavior:smooth;}
+
+.hero {
+    background-image: url(/assets/poly-hero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.hero .title {
+font-family: 'Mandali', sans-serif;
+}
+
+.footer .icon {
+    font-size: 24px;
+}
+
+#skills .tile img {max-height:140px; text-align:center;}
+#skills .tile {text-align:center;}
+
+#reviews .checked {color:orange;}
+.stats .heading {font-size:20px;}
