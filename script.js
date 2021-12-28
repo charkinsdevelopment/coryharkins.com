@@ -7,9 +7,12 @@ $('.container').on('click', function (e) {
     input.focus();
 });
 
+$('.light-toggle').on('click', function(e){
+    $('body').toggleClass('light');
+})
+
 input.on('keyup', function (e) {
     $('.new-output').text(input.val());
-    // console.log(inputReady);
 });
 
 $('.four-oh-four-form').on('submit', function (e) {
