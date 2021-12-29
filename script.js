@@ -1,4 +1,4 @@
-let commands = ['help', 'about', 'work', 'hobbies', 'life'];
+let commands = ['help', 'about', 'work', 'hobbies', 'life', 'projects', 'tech'];
 
 var inputReady = true;
 var input = $('.404-input');
@@ -33,7 +33,7 @@ function processCommand(command) {
     switch (command.toLowerCase()) {
         case "help":
             $('.terminal').append('<div class="out"><p class="prompt output">=============================================================</p>'+
-            '<p class="prompt output">The available commands are: "Help", "About", "Work", "Hobbies", "Life"</p></div>');
+            '<p class="prompt output">The available commands are: "Help", "About", "Work", "Hobbies", "Life", "Projects", "Tech"</p></div>');
             break;
         case "about":
             $('.terminal').append('<div class="out"><p class="prompt output">=============================================================</p>'+
@@ -70,6 +70,69 @@ function processCommand(command) {
             '<p class="prompt output">Education: BAS - Computer Engineering - SPSU - 2015</p>' +
             '</div>');
             break;
+        case "projects":
+            $('.terminal').append('<div class="out"><p class="prompt output">=============================================================</p>'+
+            '<p class="prompt output">Projects that I have worked on in the past:</p>' +
+            '<p class="prompt output">- Rungutan</p>' +
+            '<p class="prompt output">Cloud based automation tool.</p>' +
+            '<p class="prompt output"><a href="https://rungutan.com/" target="_blank">Check it out at https://rungutan.com/</a></p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">Projects that I have worked on in the past:</p>' +
+            '<p class="prompt output">- Try Treats</p>' +
+            '<p class="prompt output">Worldwide snack subscription box.</p>' +
+            '<p class="prompt output"><a href="https://trytreats.com/" target="_blank">Check it out here at https://trytreats.com/</a></p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">Projects that I have worked on in the past:</p>' +
+            '<p class="prompt output">- Jump Rope Dudes</p>' +
+            '<p class="prompt output">Website for exercise, workouts, equipment related to jumping rope.</p>' +
+            '<p class="prompt output"><a href="https://jumpropedudes.com/" target="_blank">Check it out at https://jumpropedudes.com</a></p>' +
+            '</div>');
+            break;
+        case "tech":
+            $('.terminal').append('<div class="out"><p class="prompt output">=============================================================</p>'+
+            '<p class="prompt output">Tech that I have worked with</p>' +
+            '<p class="prompt output">-Front End</p>' +
+            '<p class="prompt output">HTML</p>' +
+            '<p class="prompt output">CSS</p>' +
+            '<p class="prompt output">Bootstrap</p>' +
+            '<p class="prompt output">Javascript</p>' +
+            '<p class="prompt output">Jquery</p>' +
+            '<p class="prompt output">React.js</p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">-Back End</p>' +
+            '<p class="prompt output">Asp.net (webforms, mvc, dotnetcore)</p>' +
+            '<p class="prompt output">C#</p>' +
+            '<p class="prompt output">Node.js</p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">-Mobile</p>' +
+            '<p class="prompt output">Android</p>' +
+            '<p class="prompt output">React Native</p>' +
+            '<p class="prompt output">Flutter</p>' +
+            '<p class="prompt output">Xamerin</p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">-Databases</p>' +
+            '<p class="prompt output">MSSQL</p>' +
+            '<p class="prompt output">My SQL</p>' +
+            '<p class="prompt output">Postgrese SQL</p>' +
+            '<p class="prompt output">Air Table</p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">-Cloud Servers</p>' +
+            '<p class="prompt output">Azure</p>' +
+            '<p class="prompt output">AWS</p>' +
+            '<p class="prompt output"></p>' +
+
+            '<p class="prompt output">-OS</p>' +
+            '<p class="prompt output">Windows</p>' +
+            '<p class="prompt output">Linux</p>' +
+            '<p class="prompt output"></p>'
+
+            );
     }
 
     var lines = $('.out p');
